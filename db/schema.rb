@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_25_190202) do
+ActiveRecord::Schema.define(version: 2018_09_01_192723) do
+
+  create_table "phones", force: :cascade do |t|
+    t.string "type_phone"
+    t.string "number_phone"
+    t.boolean "active_phone"
+    t.datetime "date_create"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_phones_on_user_id"
+  end
 
   create_table "rols", force: :cascade do |t|
     t.string "description"
@@ -26,6 +37,17 @@ ActiveRecord::Schema.define(version: 2018_08_25_190202) do
   create_table "skills", force: :cascade do |t|
     t.string "description"
     t.string "resource"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.string "email"
+    t.boolean "approved_course"
+    t.boolean "collector_validate"
+    t.datetime "date_registration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
