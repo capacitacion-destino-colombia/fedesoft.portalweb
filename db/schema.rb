@@ -19,12 +19,8 @@ ActiveRecord::Schema.define(version: 2018_09_01_195553) do
     t.boolean "course_approved"
     t.boolean "validation"
     t.datetime "date_inscription"
-    t.integer "phone_id"
-    t.integer "colector_has_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["colector_has_user_id"], name: "index_colectors_on_colector_has_user_id"
-    t.index ["phone_id"], name: "index_colectors_on_phone_id"
   end
 
   create_table "colectors_profiles", id: false, force: :cascade do |t|
