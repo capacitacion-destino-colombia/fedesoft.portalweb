@@ -11,18 +11,14 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.boolean :course_validation
       t.boolean :colector_validation
       t.integer :deliveries
-      t.string :total_recicled
-      t.string :total_delivered
+      t.float :total_recicled
+      t.float :total_delivered
       t.datetime :creation_date
       t.references :course, foreign_key: true
-      t.references :donations, foreign_key: true
-      t.references :complaints, foreign_key: true
-      t.references :users, foreign_key: true
-      t.references :colector, foreign_key: true
-      t.references :boxs, foreign_key: true
-      t.references :recicle_report, foreign_key: true
-
+      
       t.timestamps
     end
+    # create_join_table :profiles, :courses do |t|
+    # end
   end
 end

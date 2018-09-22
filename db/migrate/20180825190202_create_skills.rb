@@ -7,7 +7,7 @@ class CreateSkills < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-   create_join_table :skills, :rols do |t|
-  end
+    create_join_table :skills, :rols do |t|
+    end
   end
 end

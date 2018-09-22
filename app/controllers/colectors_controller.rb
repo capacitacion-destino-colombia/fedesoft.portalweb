@@ -11,6 +11,8 @@ class ColectorsController < ApplicationController
     def show
       @colectors = Colector.find(params[:id])
       render json: @colectors, status: :ok
-  end
+    end
+    
+
 
 end
